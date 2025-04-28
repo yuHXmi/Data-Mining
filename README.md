@@ -10,15 +10,9 @@ Dự án này là thành quả của nhóm chúng em trong môn học Khai Phá 
 Mục tiêu của dự án là xây dựng một hệ thống giao dịch định lượng sử dụng mô hình Transformer để phân loại các tín hiệu giao dịch thành ba trạng thái: BUY, SELL, và HOLD. Bằng cách tích hợp các kỹ thuật tiên tiến như Time2Vec để mã hóa thời gian và các chỉ báo kỹ thuật, chúng em hướng đến việc nâng cao khả năng nắm bắt các mối quan hệ thời gian và động lực thị trường từ dữ liệu giá cổ phiếu tần suất cao. Dự án không chỉ thể hiện tiềm năng của học sâu trong thị trường tài chính mà còn là minh chứng cho nỗ lực áp dụng kiến thức lý thuyết vào thực tiễn của nhóm.
 
 ## Cấu trúc file 
-- data/ # Dữ liệu lịch sử (đã xử lý)
+- data/ # Dữ liệu lịch sử (100 hàng mẫu của dữ liệu đã xử lý)
 - models/ # Checkpoints mô hình đã huấn luyện
-- notebooks/ # Các notebook demo, phân tích
-- src/  # Code nguồn
-  - data_loader.py  # Xử lý dữ liệu đầu vào
-  - model.py # Định nghĩa mô hình Transformer
-  - train.py # Huấn luyện mô hình
-  - evaluate.py # Đánh giá hiệu suất mô hình
-  - backtest.py # Kiểm thử chiến lược giao dịch
+- notebooks/ # Notebook demo, phân tích
 - requirements.txt # Các thư viện cần thiết
 - README.md # Mô tả dự án
 
@@ -56,7 +50,7 @@ Nhóm đã phát triển ba mô hình dựa trên Transformer, tăng dần độ
 #### Huấn luyện và tối ưu hóa
 Tất cả mô hình được huấn luyện với:
 - Kích thước batch: 64
-- Số epoch: 10 (với Early Stopping, patience=5)
+- Số epoch: 15 (với Early Stopping, patience=5)
 - Tối ưu hóa: Adam (tốc độ học=0.0001)
 - Hàm mất mát: Sparse Categorical Cross Entropy
 - Chỉ số: Accuracy
